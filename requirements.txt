@@ -1,0 +1,21 @@
+# Hinglish ASR — runtime dependencies
+# CPU install:
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch
+#   pip install -r requirements.txt
+# (For GPU, install the CUDA build of torch instead, same index page.)
+torch>=2.1
+transformers>=4.44
+soundfile>=0.12
+scipy>=1.11
+numpy>=2.0
+
+# Evaluation only (evaluate.py)
+jiwer>=3.0
+datasets>=2.20,<4.0  # pinned: datasets 4.x needs torchcodec to decode audio; 3.x uses librosa+soundfile
+librosa>=0.10  # audio decoding backend for datasets 3.x
+
+# Web demo only (app.py / Hugging Face Space)
+gradio>=4.40
+
+# Optional: mp3/m4a loading fallback in transcribe.py
+# librosa>=0.10

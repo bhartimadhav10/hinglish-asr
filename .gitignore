@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.wav
+*.mp3
+*.flac
+!examples/*.txt
+models/
+checkpoints/
+.DS_Store

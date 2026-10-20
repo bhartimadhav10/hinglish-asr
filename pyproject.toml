@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hinglish-asr"
+version = "1.0.0"
+description = "Whisper-base fine-tuned for Hinglish (Hindi-English code-switched) speech recognition — inference, evaluation, and demo."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Madhav Bharti" }]
+dependencies = [
+    "torch>=2.1",
+    "transformers>=4.44",
+    "soundfile>=0.12",
+    "scipy>=1.11",
+    "numpy>=2.0",
+]
+
+[project.optional-dependencies]
+eval = ["jiwer>=3.0", "datasets>=2.20,<4.0", "librosa>=0.10"]
+demo = ["gradio>=4.40"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
